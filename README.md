@@ -1,4 +1,4 @@
-Python SEO Analyzer
+Python SEO Analyzer + micro node api
 ===================
 
 [![Googling Google by taleas.com](https://www.taleas.com/static/images/comics/googling-google.jpg "Googling Google by taleas.com")](https://www.taleas.com/comics/googling-google.html)
@@ -7,7 +7,42 @@ An SEO tool that analyzes the structure of a site, crawls the site, counts words
 
 Requires Python 3.6+, BeautifulSoup4 and urllib3.
 
-Installation
+### Node api 
+
+[MT] I take no credit for the original python-seo-analyzer, just made it easier to implement it as a µservice
+
+Usage:
+
+```
+docker pull michaeltiel/python-seo-analyzer
+docker run -p 3000:3000 michaeltiel/python-seo-analyzer
+```
+
+It opens up a node api with a single endpoint that accepts a json body accepting two properties:
+domain (required) and sitemap (optional)
+
+```
+{
+ "domain": "https://tiel.dev/", 
+ "sitemap": "sitemap.xml"
+}
+```
+
+This will return
+
+```
+{
+    "pages": [
+        {
+            "url": "https://tiel.dev",
+            "title": "home - tiel.dev",
+            "description": ...
+ 
+```
+
+
+
+From original repo installation
 ------------
 
 ### PIP

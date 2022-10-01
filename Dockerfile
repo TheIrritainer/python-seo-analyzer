@@ -3,8 +3,6 @@ FROM python:3-alpine
 RUN apk update && \
     apk --no-cache add \
     nodejs npm \
-    make \
-    g++ \
     bash nano
 
 
